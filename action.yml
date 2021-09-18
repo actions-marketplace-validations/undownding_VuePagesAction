@@ -34,8 +34,8 @@ runs:
   steps:
       - name: Build Vue
         run: |
-              npm ci
-              npm run build
+              yarn install --frozen-lockfile
+              yarn build
               cd dist
               ln -s index.html 404.html
               if [ "none" !=  ${{ inputs.cname }} ]; then echo '${{ inputs.cname }}' > CNAME; fi
